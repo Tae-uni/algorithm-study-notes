@@ -28,6 +28,7 @@ def isPalindrome_slicing(s: str) -> bool:
 ```
 
 ### Way 2: Using Two Pointers
+**Code:** [Two Pointers](valid_palindrome_two_pointers.py)
 ```python
 def isPalindrome_pointers(s: str) -> bool:
     s = ''.join(c.lower() for c in s if c.isalnum())
