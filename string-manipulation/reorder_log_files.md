@@ -1,5 +1,3 @@
-from re import split
-
 # Reorder Log Files (LeetCode #937)
 
 The first word is the `identifier`.  
@@ -40,7 +38,6 @@ def reorderLogFiles(logs: List[str]) -> List[str]:
     return letters + digits
 ```
 
-
 ### Way 2: Sorted (*More Pythonic*)
 **Code:** [Reorder Log](reorder_log.py)
 
@@ -56,12 +53,12 @@ def reorderLogFiles(logs: List[str]) -> List[str]:
     return sorted(logs, key=sorting_algorithm)
 ```
 
-## Final Thoughts
-Basically, way1 and 2 have same Time Complexity(`O(nlogn*m)`).  
-Otherwise, it's more efficient way1(`O(m+n)`) with Space Complexity, compare to way2(`O(mlogn)`).
-
-
-
+## 🔥 Final Thoughts
+Both approaches have the same Time Complexity of `O(nlogn*m)`. Cause, they rely on sorting operations.  
+Otherwise, when it comes to Space Complexity, Way1 (Separate Lists & Sorting) is more efficient, requiring `O(m+n)`.  
+Way2 (Using sorted()) has a higher space overhead of `O(mlogn)`.  
+Thus, Way 1 is better for large inputs as it optimizes memory usage.
+---
 ## References
 - [Reorder Log Files](https://leetcode.com/problems/reorder-data-in-log-files/description/)
 - [Python String isdigit() Method](https://www.w3schools.com/python/ref_string_isdigit.asp)
