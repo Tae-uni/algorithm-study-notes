@@ -8,7 +8,7 @@ Letter come before all digit.
 Ordered by contents. If contents are the same, ordered by identifier.  
 **Return the final order of the logs.**
 
-**Constrains:**
+**Constraints:**
 > 1 <= logs.length <= 100  
 > 3 <= logs[i].length <= 100  
 > logs[i] separated by a single space.

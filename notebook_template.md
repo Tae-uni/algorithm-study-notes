@@ -1,7 +1,7 @@
 # Name (LeetCode #1)
 
 
-**Constrains:**
+**Constraints:**
 >
 >
 

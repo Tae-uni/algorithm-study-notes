@@ -2,7 +2,7 @@
 Array of int `nums` and an integer `target`.  
 Return the answer in any order.  
 
-**Constrains:**  
+**Constraints:**  
 > 2 <= nums.length <= 10^4  
 > -10^9 <= nums[i] <= 10^9  
 > -10^9 <= target <= 10^9  

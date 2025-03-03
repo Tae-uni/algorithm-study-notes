@@ -6,7 +6,7 @@ return all the [nums[i], nums[j], nums[k]],
 
 Solution set must not contain duplicate triplets.
 
-**Constrains:**
+**Constraints:**
 > 3 <= nums.length <= 3000  
 > -10^5 <= nums[i] <= 10^5
 

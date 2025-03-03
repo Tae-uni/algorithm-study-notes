@@ -5,7 +5,7 @@ There is at least one word that is not banned, and that the answer is unique.
 
 In paragraph, case-insensitive(upper, lowercase are same) and the answer returned in `lowercase`.
 
-**Constrains:**
+**Constraints:**
 > 1 <= paragraph.length <= 1000  
 > 0 <= banned.length <= 100  
 > 1 <= banned[i].length <= 10  
