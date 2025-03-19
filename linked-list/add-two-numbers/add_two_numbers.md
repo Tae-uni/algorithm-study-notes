@@ -13,6 +13,8 @@ Input: l1 = [2,4,3], l2 = [5,6,4]
 Output: [7,0,8]   
 Explanation: 342 + 465 = 807.
 
+---
+
 ## Solution Approaches
 ### Approach 1: Full Adder (Recommended)
 **Code:** [Add Two Numbers - Full Adder](add_two_numbers_full_adder.py)
@@ -43,7 +45,7 @@ def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optio
 #### What is `divmod`?
 Returns both the quotient and remainder when dividing `a` by `b`. 
 ```python
-quoient, remainder = divmod(a, b)
+quotient, remainder = divmod(a, b)
 ```
 - quotient = a // b → The integer result of division.
 - remainder = a % b → The remainder after division.
@@ -53,6 +55,8 @@ quoient, remainder = divmod(a, b)
 #### ⏳ Time & Space Complexity
 - Time Complexity: `O(max(n,m))` Iterates through both lists once.
 - Space Complexity: `O(max(n,m))` Stores the new linked list in the worst case.
+
+---
 
 ### Approach 2: Reverse & Convert (Inefficient)
 **Code:** [Add Two Numbers - Reverse Convert](add_two_numbers_reverse_convert.py)
