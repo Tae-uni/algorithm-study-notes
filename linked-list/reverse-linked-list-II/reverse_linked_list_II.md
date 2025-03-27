@@ -48,8 +48,8 @@ def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Opt
 ```
 
 #### ⏳ Time & Space Complexity
-- Time Complexity: `O(n)` I
-- Space Complexity: `O(1)`
+- Time Complexity: `O(n)` Traverse the list once to reach the reversal and up to `right - left` times to reverse.
+- Space Complexity: `O(1)` In-place reversal using constant pointers.
 
 ---
 
@@ -79,8 +79,8 @@ def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Opt
 ```
 
 #### ⏳ Time & Space Complexity
-- Time Complexity: `O(n)`
-- Space Complexity: `O(1)`
+- Time Complexity: `O(n)` Traverse the list once to reach the reversal and up to `right - left` times to reverse.
+- Space Complexity: `O(1)` In-place reversal using constant pointers.
 
 ---
 
@@ -88,6 +88,10 @@ def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Opt
 Both approaches use a dummy node and perform in-place reversal with two pointers in `O(n)` time and `O(1)` space.  
 The key difference lies in pointer naming and how the reversal is expressed.  
 
+- Approach 1: uses `prev`,`curr`, and `next_node`. Clear name of the pointer, Manipulate step by step.  
+- Approach 2: uses `start`, `end`, and `tmp`. Similar logic but slightly different variable tracking style.
+
+Approach 1 is easier to understand and more explict.
 
 ---
 
