@@ -46,7 +46,11 @@ def empty(self) -> bool:
 
 #### ⏳ Time & Space Complexity
 - Time Complexity: 
-- Space Complexity:
+  - `push()`: `O(n)` Reorders the queue by rotating all elements.
+  - `pop()` : `O(1)` Pops the front element.
+  - `top()` : `O(1)` Peeks the front element.
+  - `empty()` : `O(1)` Constant time check.
+- Space Complexity: `O(n)` Uses one queue to store up to `n` element.
 
 ---
 
@@ -80,12 +84,19 @@ def empty(self) -> bool:
 ```
 
 #### ⏳ Time & Space Complexity
-- Time Complexity:
-- Space Complexity:
+- Time Complexity:  
+  - `push()`: `O(1)` Simply appends to the second queue.
+  - `pop()`: `O(n)` Transfers all but last element to second queue.
+  - `top()`: `O(n)` Similar to pop but puts last element back.
+  - `empty()`: `O(1)` Constant time check.
+- Space Complexity: `O(n)` Uses two queues that store all elements between them.
 
 ---
 
 ## 🔥 Final Thoughts
+Both approaches correctly simulate a stack using only queue operations.  
+Approach 1(Eager pop) pre-processes during `push()` to make `pop()` and `top()` fast.  
+Approach 2(Lazy pop) defers processing until `pop()` or `top()`, making `push()` simple and fast.  
 
 ---
 
