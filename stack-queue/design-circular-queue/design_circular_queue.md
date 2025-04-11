@@ -82,7 +82,7 @@ Return size == capacity
 
 ---
 
-### Approach: Two pointers
+### Approach 1: Two pointers(Recommended)
 **Code:** [Design Circular Queue - Two pointers](design_circular_queue_two_pointers.py)
 ```python
 def __init__(self, k: int):
@@ -211,21 +211,149 @@ circularQueue.Front()
 ---
 
 #### ⏳ Time & Space Complexity
-- Time Complexity: all operations `enQueue`, `deQueue`, `Front`, `Rear`, `isEmpty`, `isFull` takes `O(1)` time.
+- Time Complexity: All operations `enQueue`, `deQueue`, `Front`, `Rear`, `isEmpty`, `isFull` takes `O(1)` time.
 - Space Complexity: Uses `O(k)` space for storing elements and managing pointers.
 
 ---
 
-### Another approach : Linked List
-**Code:** []()
+### Approach 2: Linked List
+**Code:** [Design Circular Queue - Linked list](design_circular_queue_linked_list.py)
+```python
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+class MyCircularQueue:
+    def __init__(self, k: int):
+        self.capacity = k
+        self.size = 0
+        # head, tail are reference the Node. -> None
+        self.head = None
+        self.tail = None
+
+    def enQueue(self, value: int) -> bool:
+        if self.size == self.capacity:
+            return False
+
+        new_node = Node(value)
+
+        if self.size == 0:
+            self.head = self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+
+        self.size += 1
+        return True
+
+    def deQueue(self) -> bool:
+        if self.size == 0:
+            return False
+
+        self.head = self.head.next
+        self.size -= 1
+
+        if self.size == 0:
+            self.tail = None
+
+        return True
+
+    def Front(self) -> int:
+        if self.size == 0:
+            return -1
+        return self.head.val
+
+    def Rear(self) -> int:
+        if self.size == 0:
+            return -1
+        return self.tail.val
+
+    def isEmpty(self) -> bool:
+        return self.size == 0
+
+    def isFull(self) -> bool:
+        return self.size == self.capacity
+```
+
+### Example Walkthrough
+```
+Input:
+
+MyCircularQueue circularQueue = new MyCircularQueue(5);
+circularQueue.enQueue(10);
+circularQueue.enQueue(20);
+circularQueue.deQueue();
+```
+
+init:  
+capacity = 5  
+size = 0  
+head = None  
+tail = None  
+
+**circularQueue.enQueue(10)**  
+> new_node = Node(10)  
+> self.size == 0 -> so, head,tail -> Node(10)
+> size = 1
+
+```
+head -> 10
+        tail
+```
+
+---
+
+init:  
+capacity = 5  
+size = 1  
+head = Node(10)  
+tail = Node(10)
+
+**circularQueue.enQueue(20)**
+> new_node = Node(20)
+> else: tail.next = Node(20)
+```
+head -> 10 -> 20
+```
+> tail = Node(20)
+```
+head -> 10 -> 20
+              tail
+```
+> size = 20
+
+---
+
+init:  
+capacity = 5  
+size = 2  
+head = Node(10)  
+tail = Node(20)
+
+---
+
+**circularQueue.deQueue()**  
+head = head.next means move forward the pointer.  
+So,
+```
+head -> 20
+tail -> 20
+```
+size = 1
+
+---
+
+#### ⏳ Time & Space Complexity
+- Time Complexity: All operations `enQueue`, `deQueue`, `Front`, `Rear`, `isEmpty`, `isFull` takes `O(1)` time.
+- Space Complexity: Uses `O(k)` space to store up to k linked nodes.
 
 ---
 
 ## 🔥 Final Thoughts
-This implementation uses two pointers(`front`, `rear`) and a size counter to simulate a ring buffer.  
+Approach 1(Two pointers) uses two pointers(`front`, `rear`) and a size counter to simulate a ring buffer. Ideal for fixed-size queues.  
+Approach 2(Linked List) more flexible in dynamic memory usage, though slightly more complex.  
 It efficiently works all queue operations in `O(1)` time using constant space.  
-
-A clean and optimal design, also traditional way to solve the `circular queue` problem.
 
 ---
 
